@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+}
+
+.course-database {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}
+
+.course-database-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  padding: 3rem;
+  text-align: center;
+}
+
+.course-database-error {
+  margin-bottom: 16px;
+
+  color: red;
+}
+
+.course-box {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  width: 600px;
+  height: 578px;
+  margin: 1rem 0;
+  padding: 1rem;
+  color: white;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.course-box-content {
+  overflow-y: scroll;
+  flex-grow: 1;
+  scrollbar-width: none;
+}
+
+.course-box-content::-webkit-scrollbar {
+  display: none;
+}
+
+.course-no-results {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 3em;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.course-block {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 16px;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  transform: translateY(10px);
+
+  opacity: 0;
+  color: white;
+  border: 4px solid rgba(200, 200, 200, 0.5); /* Light gray outline */
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.course-block.visible {
+  transform: translateY(0);
+
+  opacity: 1;
+}
+
+.course-block span {
+  display: block;
+  margin-bottom: 0.25em;
+}
+
+.course-block ul {
+  padding: 0;
+
+  list-style: none;
+}
+
+.course-block ul li {
+  font-size: 1rem;
+
+  display: flex;
+  justify-content: center;
+  margin: 4px 0;
+  gap: 8px;
+}
+
+.course-block ul li span {
+  font-size: inherit;
+  line-height: inherit;
+
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.professor-score.red {
+  color: rgba(255, 0, 0, 0.75);
+}
+
+.professor-score.yellow {
+  color: rgba(255, 255, 0, 0.75);
+}
+
+.professor-score.green {
+  color: rgba(0, 255, 0, 0.75);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+
+    opacity: 1;
+  }
+}
